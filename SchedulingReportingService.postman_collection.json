@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "75088e0a-1133-44e0-a84d-b329c9e2c374",
+		"name": "SchedulingReportingService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8091345",
+		"_collection_link": "https://syncnet.postman.co/workspace/SyncNet-Workspace~758d4e30-51a2-4314-952d-389aa696b780/collection/8091345-75088e0a-1133-44e0-a84d-b329c9e2c374?action=share&source=collection_link&creator=8091345"
+	},
+	"item": [
+		{
+			"name": "Create Schedule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskType\": \"DailySalesReport\",\r\n    \"cronExpression\": \"Daily\" // Cron expression for daily at midnight / has Weekly and Monthly too\r\n    \r\n    //, \r\n    // \"startDate\": \"2024-10-01T00:00:00Z\", // Optional start date report\r\n    // \"endDate\": \"2024-10-31T23:59:59Z\" // Optional end date report\r\n\r\n    //The below fields for getting data from another source\r\n    , \r\n     \"source\": \"LocalHost\", // Optional\r\n     \"url\": \"http://localhost:5212/\", // Optional\r\n     \"apiKey\": \"\" // Optional\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5212/api/schedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5212",
+					"path": [
+						"api",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Schedule",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5212/api/schedule/{taskID)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5212",
+					"path": [
+						"api",
+						"schedule",
+						"{taskID)"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Schedule Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5212/api/schedule/GetAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5212",
+					"path": [
+						"api",
+						"schedule",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Schedule",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskType\": \"DailySalesReport\",\r\n    \"cronExpression\": \"Daily\" // Cron expression for daily at midnight / has Weekly and Monthly too\r\n    \r\n    //, \r\n    // \"startDate\": \"2024-10-01T00:00:00Z\", // Optional start date report\r\n    // \"endDate\": \"2024-10-31T23:59:59Z\" // Optional end date report\r\n\r\n    //The below fields for getting data from another source\r\n    , \r\n     \"source\": \"LocalHost\", // Optional\r\n     \"url\": \"http://localhost:5212/\", // Optional\r\n     \"apiKey\": \"\" // Optional\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5212/api/schedule/{taskID)",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5212",
+					"path": [
+						"api",
+						"schedule",
+						"{taskID)"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
