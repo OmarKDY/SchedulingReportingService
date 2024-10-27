@@ -28,3 +28,7 @@ To clone the repository, run the following command in your terminal or command p
 
 ```bash
 git clone https://github.com/OmarKDY/SchedulingReportingService.git
+
+##Note
+Postman Collection Attached
+SchedulingReportingService.postman_collection
